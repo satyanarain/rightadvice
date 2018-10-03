@@ -19498,3 +19498,7 @@ margin-top: 20px;}
     margin-right: auto;
     width: 100%;
 }
+.attachment-post-thumbnail img {
+    display: block;
+    margin: 0 auto;
+}
