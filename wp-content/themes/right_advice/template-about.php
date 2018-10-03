@@ -39,7 +39,6 @@ img.logo {
 <section class="shadow">
 	<img src="<?=get_the_post_thumbnail_url()?>" class="logo" >
 </section>
-
 <section class="main-container padding-bottom-clear">
 	<div class="container">
 		<div class="row">
