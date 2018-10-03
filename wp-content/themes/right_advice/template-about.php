@@ -17,7 +17,6 @@ get_header();
 //$post = get_post(74);
 ?>
 <style>
-    
  .shadow {
     position:absolute;
     max-width:45%;
