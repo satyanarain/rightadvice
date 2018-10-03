@@ -24,7 +24,7 @@ get_header(); ?>
 	</div>
 </div>
 <div class="clearfix"></div>
-<section class="center">
+<section class="aboutf">
 	<?=the_post_thumbnail()?>
 </section>
 
