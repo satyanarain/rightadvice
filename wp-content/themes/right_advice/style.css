@@ -19502,11 +19502,11 @@ margin-top: 20px;}
     display: block;
     margin: 0 auto;
 }
-.wp-post-image img {
-   display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%; 
+.wp-post-image{
+   display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important; 
     
     
 }
