@@ -33,8 +33,7 @@ img.logo {
     margin-top:-50%;
     margin-left:-50%;
 } 
-    
-</style>
+    </style>
 
 <section class="shadow">
 	<img src="<?=get_the_post_thumbnail_url()?>" class="logo" >
