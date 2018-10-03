@@ -34,7 +34,6 @@ img.logo {
     margin-left:-50%;
 } 
     </style>
-
 <section class="shadow">
 	<img src="<?=get_the_post_thumbnail_url()?>" class="logo" >
 </section>
