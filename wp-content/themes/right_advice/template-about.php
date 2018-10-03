@@ -16,7 +16,7 @@ get_header();
 <?php 
 //$post = get_post(74);
 ?>
-<section class="aboutf">
+<section class="aboutf center">
 	<img src="<?=get_the_post_thumbnail_url()?>">
 </section>
 
