@@ -9,7 +9,7 @@
 				<?php if($user['profile_image'] != ''){ ?>
 				<img src="profile_pics/<?=$user['profile_image']?>">
 				<?php }else{ ?>
-				<img src="http://curedincurable.com/rightadvice/lawyer/lawyer-dummy-image.png">
+				<img src="http://35.154.128.159:83/lawyer/lawyer-dummy-image.png">
 				<?php }?>
 			</div>
 			<div>

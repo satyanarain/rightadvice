@@ -8,7 +8,7 @@ ob_start();
 
 if(isset($_SESSION['lawyerEmail']) && $_SESSION['lawyerEmail'] != '')
 {
-	$url = "http://curedincurable.com/rightadvice/lawyer/dashboard";
+	$url = "http://35.154.128.159:83/lawyer/dashboard";
 	header("location:$url");
 }
 ?>

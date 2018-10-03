@@ -192,7 +192,7 @@ if(isset($_GET['qid']))
 	</div>
 
 </article><!--end post-entry-->
-<script type="text/javascript" src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="http://35.154.128.159:83/wp-content/themes/right_advice/js/ckeditor/ckeditor.js"></script>
 	
 <script>
 	CKEDITOR.replace( 'feedback' );

@@ -179,7 +179,7 @@ if(session_id() == '')
 
 									<div class="dropdown-content">
 
-										<a href="http://curedincurable.com/rightadvice/user/dashboard"> dashboard</a>
+										<a href="http://35.154.128.159:83/user/dashboard"> dashboard</a>
 
 										<a href="<?=bloginfo('template_url')?>/logout?uid=<?=$uid?>">logout</a>
 
@@ -191,7 +191,7 @@ if(session_id() == '')
 
 									<div class="dropdown-content">
 
-										<a href="http://curedincurable.com/rightadvice/lawyer/dashboard"> dashboard</a>
+										<a href="http://35.154.128.159:83/lawyer/dashboard"> dashboard</a>
 
 										<a href="<?=bloginfo('template_url')?>/logout?uid=<?=$uid?>">logout</a>
 

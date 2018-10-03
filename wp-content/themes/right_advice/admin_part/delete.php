@@ -8,7 +8,7 @@ if(isset($_GET['lid']) && $_GET['lid'] != ''){
 		header("all-lawyer");
 	}else{
 		$_SESSION['reg_error'] = "Record not deleted, please try again";
-		//header("location:http://curedincurable.com/rightadvice/wp-admin/admin.php?page=all_lawyer");
+		//header("location:http://35.154.128.159:83/wp-admin/admin.php?page=all_lawyer");
 		header("all-lawyer");
 	}
 }

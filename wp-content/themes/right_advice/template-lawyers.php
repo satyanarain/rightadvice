@@ -301,7 +301,7 @@ function formatData($data)
 									<div class="row grid-space-0">
 										<div class="col-sm-4 col-md-3 col-lg-3 prof1">
 											<?php if($top->profile_image != ''){?>
-											<a href="lawyer-profile?lid=<?=base64_encode($top->id)?>"><img src="http://curedincurable.com/rightadvice/lawyer/profile_pics/<?=$top->profile_image?>" alt="<?=$top->full_name?>"></a>
+											<a href="lawyer-profile?lid=<?=base64_encode($top->id)?>"><img src="http://35.154.128.159:83/lawyer/profile_pics/<?=$top->profile_image?>" alt="<?=$top->full_name?>"></a>
 											<?php }else{?>
 											<a href="lawyer-profile?lid=<?=base64_encode($top->id)?>"><img src="<?=bloginfo('template_url')?>/images/no-image.jpg" alt="<?=$top->full_name?>"></a>
 											<?php }?>
@@ -373,7 +373,7 @@ function formatData($data)
 						<div class="row grid-space-0">
 							<div class="col-sm-4 col-md-3 col-lg-3 prof1">
 								<?php if($lawyer->profile_image != ''){?>
-								<a href="lawyer-profile?lid=<?=base64_encode($lawyer->id)?>"><img src="http://curedincurable.com/rightadvice/lawyer/profile_pics/<?=$lawyer->profile_image?>" alt="<?=$lawyer->full_name?>"></a>
+								<a href="lawyer-profile?lid=<?=base64_encode($lawyer->id)?>"><img src="http://35.154.128.159:83/lawyer/profile_pics/<?=$lawyer->profile_image?>" alt="<?=$lawyer->full_name?>"></a>
 								<?php }else{?>
 								<a href="lawyer-profile?lid=<?=base64_encode($lawyer->id)?>"><img src="<?=bloginfo('template_url')?>/images/no-image.jpg" alt="<?=$lawyer->full_name?>"></a>
 								<?php }?>

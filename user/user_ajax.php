@@ -156,7 +156,7 @@ if(isset($_GET['uid']) && $_GET['uid'] != '')
 	{
 		session_unset($_SESSION['userEmail']);
 		session_destroy();
-		header("location:http://curedincurable.com/rightadvice/user-login");
+		header("location:http://35.154.128.159:83/user-login");
 	}
 }
 

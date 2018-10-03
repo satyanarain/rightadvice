@@ -60,7 +60,7 @@ function weekly_email_lawyer() {
                                         <tbody>
                                         	<tr>
                                             	<td width="30">&nbsp;</td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30">&nbsp;</td>
                                             </tr>
                                        	</tbody>
@@ -186,7 +186,7 @@ function weekly_email_admin() {
                                         <tbody>
                                         	<tr>
                                             	<td width="30">&nbsp;</td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30">&nbsp;</td>
                                             </tr>
                                        	</tbody>

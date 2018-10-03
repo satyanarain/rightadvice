@@ -148,7 +148,7 @@ if(isset($_POST['lawyer_registration']))
 					$_SESSION['eeid'] = $eid;
 					$_SESSION['ttid'] = $tid;
 					
-					$token = "http://curedincurable.com/rightadvice/email-confirm?eid=".$eid."&tid=".$tid;
+					$token = "http://35.154.128.159:83/email-confirm?eid=".$eid."&tid=".$tid;
 					
 					$to = $email;
 					$subject = "Right Advice - Email Confirmation Link";
@@ -172,7 +172,7 @@ $htmlContent = '
                                         <tbody>
                                         	<tr>
                                             	<td width="30">&nbsp;</td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30">&nbsp;</td>
                                             </tr>
                                        	</tbody>
@@ -289,7 +289,7 @@ $headers .= 'From: Right Advice <'.$from.'>'."\r\n".
 	}else if(!empty($succ_msg)){
 		$_SESSION['reg_succ'] = $succ_msg;
 	}
-	$url = "http://curedincurable.com/rightadvice/lawyer-registration";
+	$url = "http://35.154.128.159:83/lawyer-registration";
 	header("location:$url");
 }
 
@@ -316,7 +316,7 @@ if(isset($_POST['lawyer_login']))
 		if(mysql_num_rows($loginData) > 0)
 		{
 			$data = mysql_fetch_assoc($loginData);
-			$url = "http://curedincurable.com/rightadvice/lawyer-login";
+			$url = "http://35.154.128.159:83/lawyer-login";
 				
 			/* if($data['email_confirm'] == 0)
 			{
@@ -334,13 +334,13 @@ if(isset($_POST['lawyer_login']))
 				$_SESSION['lawyerID'] = $data['id'];
 				$_SESSION['lawyerName'] = $data['full_name'];
 				$_SESSION['lawyerEmail'] = $data['email'];
-				$url = "http://curedincurable.com/rightadvice/lawyer/dashboard";
+				$url = "http://35.154.128.159:83/lawyer/dashboard";
 				header("location:$url");
 			}
 		}
 		else{
 			$_SESSION['reg_error'] = 'Invalid email or password, please try again.';
-			$url = "http://curedincurable.com/rightadvice/lawyer-login";
+			$url = "http://35.154.128.159:83/lawyer-login";
 			header("location:$url");
 		}
 	
@@ -443,7 +443,7 @@ if(isset($_POST['user_registration']))
 				//$_SESSION['eeid'] = $eid;
 				//$_SESSION['ttid'] = $tid;
 				
-				$token = "http://curedincurable.com/rightadvice/email-confirm?eid=".$eid."&tid=".$tid."&tp=".$type;
+				$token = "http://35.154.128.159:83/email-confirm?eid=".$eid."&tid=".$tid."&tp=".$type;
 				
 				$to = $email;
 				$subject = "Right Advice | Email Confirmation Link";
@@ -467,7 +467,7 @@ $htmlContent = '
                                         <tbody>
                                         	<tr>
                                             	<td width="30">&nbsp;</td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30">&nbsp;</td>
                                             </tr>
                                        	</tbody>
@@ -586,7 +586,7 @@ $headers .= 'From: Right Advice <'.$from.'>'."\r\n".
 		$_SESSION['reg_succ'] = $succ_msg;
 	}
 	
-	$url = "http://curedincurable.com/rightadvice/user-registration";
+	$url = "http://35.154.128.159:83/user-registration";
 	header("location:$url");
 }
 
@@ -626,20 +626,20 @@ if(isset($_POST['user_login']))
 				$_SESSION['userEmail'] = $data['email'];
 				
 				if($llid != '')
-					$url = "http://curedincurable.com/rightadvice/lawyer-profile?lid=".base64_encode($llid);
+					$url = "http://35.154.128.159:83/lawyer-profile?lid=".base64_encode($llid);
 				else
-					$url = "http://curedincurable.com/rightadvice/user/dashboard";
+					$url = "http://35.154.128.159:83/user/dashboard";
 				header("location:$url");
 			}
 			else{
 				$_SESSION['reg_error'] = 'You have not confirmed your email. Please check your email and confirm your email address.';
-				$url = "http://curedincurable.com/rightadvice/user-login/";
+				$url = "http://35.154.128.159:83/user-login/";
 				header("location:$url");
 			}
 		}
 		else{
 			$_SESSION['reg_error'] = 'Invalid email or password, please try again.';
-			$url = "http://curedincurable.com/rightadvice/user-login/";
+			$url = "http://35.154.128.159:83/user-login/";
 			header("location:$url");
 		}
 	
@@ -697,9 +697,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'ajax_filter')
 					
 						<a href="lawyer-profile?lid=<?=base64_encode($lawyer['id'])?>">
 							<?php if($lawyer['profile_image']){?>
-								<img src="http://curedincurable.com/rightadvice/lawyer/profile_pics/<?=$lawyer['profile_image']?>" alt="<?=$lawyer['full_name']?>">
+								<img src="http://35.154.128.159:83/lawyer/profile_pics/<?=$lawyer['profile_image']?>" alt="<?=$lawyer['full_name']?>">
 							<?php }else {?>
-								<img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/no-image.jpg" alt="<?=$lawyer['full_name']?>">
+								<img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/no-image.jpg" alt="<?=$lawyer['full_name']?>">
 							<?php }?>
 						</a>
 						<div class="clear"></div>
@@ -902,7 +902,7 @@ if(isset($_POST['add_question']))
                                         <tbody>
                                         	<tr>
                                             	<td width="30">&nbsp;</td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30">&nbsp;</td>
                                             </tr>
                                        	</tbody>
@@ -1000,7 +1000,7 @@ if(isset($_POST['add_question']))
                                         <tbody>
                                         	<tr>
                                             	<td width="30">&nbsp;</td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30">&nbsp;</td>
                                             </tr>
                                        	</tbody>
@@ -1089,7 +1089,7 @@ if(isset($_POST['add_question']))
 		$_SESSION['reg_error'] = $errors;
 	
 	$id = base64_encode($lawyer_id);
-	$url = "http://curedincurable.com/rightadvice/question?qid=".$id;
+	$url = "http://35.154.128.159:83/question?qid=".$id;
 	header("location:$url");
 }
 
@@ -1129,7 +1129,7 @@ if(isset($_POST['forgot_password']))
 		$_SESSION['tid'] = $token;
 		$_SESSION['eid'] = $eid;
 		
-		$forgot_link = "http://curedincurable.com/rightadvice/change-password?tid=".$token."&eid=".$eid;
+		$forgot_link = "http://35.154.128.159:83/change-password?tid=".$token."&eid=".$eid;
 		
 		$htmlContent = '<html>
     <head>
@@ -1149,7 +1149,7 @@ if(isset($_POST['forgot_password']))
                                         <tbody>
                                         	<tr>
                                             	<td width="30">&nbsp;</td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30">&nbsp;</td>
                                             </tr>
                                        	</tbody>
@@ -1223,7 +1223,7 @@ if(isset($_POST['forgot_password']))
 	else
 		$_SESSION['reg_error'] = $errors;
 	
-	$url = "http://curedincurable.com/rightadvice/forgot-password";
+	$url = "http://35.154.128.159:83/forgot-password";
 	header("location:$url");	
 	
 }

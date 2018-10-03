@@ -103,7 +103,7 @@ get_header();
 <div class="legal-sec" style="text-align: center;">
 <h2 style="margin-top: 136px; color:#fff;"> Lawyers Directory </h2>
 <p style="margin-bottom:20px; color:#fff;"> SEARCH FOR LAW FIRM AND LAWYERS ON WORLD WIDE BASIS </p>
-<a style="color:#000; background:#fff; border:2px solid #ccc; padding:6px 10px; border-radius:4px; text-decoration:none;" href="http://curedincurable.com/rightadvice/lawyers/"> FIND A LAWYER </a>
+<a style="color:#000; background:#fff; border:2px solid #ccc; padding:6px 10px; border-radius:4px; text-decoration:none;" href="http://35.154.128.159:83/lawyers/"> FIND A LAWYER </a>
 </div>
 
 
@@ -152,7 +152,7 @@ get_header();
 		</div>
 
 		<div class="row text-center">
-			<a href="http://curedincurable.com/rightadvice/lawyers/" class="lawerbtn">View All Lawyers</a>
+			<a href="http://35.154.128.159:83/lawyers/" class="lawerbtn">View All Lawyers</a>
 		</div>
     </div>
 </div>

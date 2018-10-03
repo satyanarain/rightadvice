@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-<link rel="stylesheet" href="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/css/custom.css">
+<link rel="stylesheet" href="http://35.154.128.159:83/wp-content/themes/right_advice/css/custom.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css
 " rel="stylesheet"/>
 

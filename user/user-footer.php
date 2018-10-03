@@ -6,7 +6,7 @@
 	<div class="container"> 
     	<div class="row"> 
         
-        	<a href="http://curedincurable.com/rightadvice/terms-of-use">Terms of Use</a> / <a href="http://curedincurable.com/rightadvice/privacy-policy">Privacy Policy</a>  
+        	<a href="http://35.154.128.159:83/terms-of-use">Terms of Use</a> / <a href="http://35.154.128.159:83/privacy-policy">Privacy Policy</a>  
         
         </div>
     </div>
@@ -39,7 +39,7 @@
 
 <!-- Modernizr javascript -->
 <script type="text/javascript" src="<?=bloginfo('template_url')?>/plugins/modernizr.js"></script>
-<!--script type="text/javascript" src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/plugins/jquery.countTo.js"></script-->
+<!--script type="text/javascript" src="http://35.154.128.159:83/wp-content/themes/right_advice/plugins/jquery.countTo.js"></script-->
 
 <!-- Owl carousel javascript -->
 <script type="text/javascript" src="<?=bloginfo('template_url')?>/plugins/owl.carousel.min.js"></script>
@@ -49,6 +49,6 @@
 <script type="text/javascript" src="<?=bloginfo('template_url')?>/plugins/SmoothScroll.js"></script>
 
 <!-- Initialization of Plugins -->
-<!--script type="text/javascript" src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/js/template.js"></script-->
+<!--script type="text/javascript" src="http://35.154.128.159:83/wp-content/themes/right_advice/js/template.js"></script-->
 <script src="<?=bloginfo('template_url')?>/js/global.js"></script>
 <script src="user.js"></script>

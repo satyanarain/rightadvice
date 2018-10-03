@@ -178,7 +178,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add_data')
 				$_SESSION['eeid'] = $eid;
 				$_SESSION['ttid'] = $tid;
 				
-				$token = "http://curedincurable.com/rightadvice/email-confirm?eid=".$eid."&tid=".$tid;
+				$token = "http://35.154.128.159:83/email-confirm?eid=".$eid."&tid=".$tid;
 				
 				$to = $email;
 				$subject = "RightAdvice - Email Confirmation And Account Login Detail";
@@ -202,7 +202,7 @@ $htmlContent = '
                                         <tbody>
                                         	<tr>
                                             	<td width="30"></td>
-                                                <td align="left" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.png" /></a></td>
+                                                <td align="left" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.png" /></a></td>
                                                 <td width="30"></td>
                                             </tr>
                                        	</tbody>
@@ -388,7 +388,7 @@ $htmlContent = '
                                         <tbody>
                                         	<tr>
                                             	<td width="30"></td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.png" /></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.png" /></a></td>
                                                 <td width="30"></td>
                                             </tr>
                                        	</tbody>
@@ -427,7 +427,7 @@ $htmlContent = '
 														<table align="center" cellpadding="0" cellspacing="0" style="font-family:HelveticaNeue-Light,Arial,sans-serif; margin:0 auto; padding:0">
 														<tbody>
 															<tr>
-																<td align="center" style="margin:0;text-align:center"><a href="http://curedincurable.com/rightadvice/lawyer-login" style="font-size:21px; line-height:22px; text-decoration:none; color:#ffffff;font-weight:bold;border-radius:2px;background-color:#0096d3;padding:14px 40px;display:block;letter-spacing:1.2px" target="_blank">Login</a></td>
+																<td align="center" style="margin:0;text-align:center"><a href="http://35.154.128.159:83/lawyer-login" style="font-size:21px; line-height:22px; text-decoration:none; color:#ffffff;font-weight:bold;border-radius:2px;background-color:#0096d3;padding:14px 40px;display:block;letter-spacing:1.2px" target="_blank">Login</a></td>
 															</tr>
 														</tbody>
 														</table>
@@ -548,7 +548,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'send_reminder_email')
                                         <tbody>
                                         	<tr>
                                             	<td width="30">&nbsp;</td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30">&nbsp;</td>
                                             </tr>
                                        	</tbody>

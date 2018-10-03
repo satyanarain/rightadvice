@@ -8,7 +8,7 @@ $uid = base64_decode($_GET['uid']);
 session_unset($uid);
 session_destroy();
 
-header("location:http://curedincurable.com/rightadvice");
+header("location:http://35.154.128.159:83");
 
 /* if(isset($_GET['uid']))
 {
@@ -17,7 +17,7 @@ header("location:http://curedincurable.com/rightadvice");
 	{
 		session_unset($uid);
 		session_destroy();
-		header("location:http://curedincurable.com/rightadvice");
+		header("location:http://35.154.128.159:83");
 	}
 }
 
@@ -29,7 +29,7 @@ if(isset($_GET['lid']))
 	{
 		session_unset($lid);
 		session_destroy();
-		header("location:http://curedincurable.com/rightadvice");
+		header("location:http://35.154.128.159:83");
 	}
 } */
 //get_footer();

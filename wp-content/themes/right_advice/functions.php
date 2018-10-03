@@ -572,7 +572,7 @@ function lawyer_menu(){
 }
 
 function all_lawyer_page(){
-    echo '<div><iframe src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/admin_part/all-lawyers.php" style="width:97%;height:2372px;;border:0; id="myiframe"></iframe></div>';
+    echo '<div><iframe src="http://35.154.128.159:83/wp-content/themes/right_advice/admin_part/all-lawyers.php" style="width:97%;height:2372px;;border:0; id="myiframe"></iframe></div>';
 } 
 
 
@@ -582,7 +582,7 @@ function user_menu(){
 }
 
 function all_user_page(){
-    echo '<div><iframe src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/admin_part/all-users.php" style="width:95%;height:800px;border:0; id="myiframe"></iframe></div>';
+    echo '<div><iframe src="http://35.154.128.159:83/wp-content/themes/right_advice/admin_part/all-users.php" style="width:95%;height:800px;border:0; id="myiframe"></iframe></div>';
 } 
 
 add_action( 'admin_menu', 'question_answer' );
@@ -591,7 +591,7 @@ function question_answer(){
 }
 
 function all_question_answer_page(){
-    echo '<div><iframe src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/admin_part/all-questions-answer.php" style="width:95%;height:800px;border:0; id="myiframe"></iframe></div>';
+    echo '<div><iframe src="http://35.154.128.159:83/wp-content/themes/right_advice/admin_part/all-questions-answer.php" style="width:95%;height:800px;border:0; id="myiframe"></iframe></div>';
 } 
 
 add_action( 'admin_menu', 'rating_comments' );
@@ -600,7 +600,7 @@ function rating_comments(){
 }
 
 function all_rating_comment_page(){
-    echo '<div><iframe src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/admin_part/all-rating-comment.php" style="width:95%;height:800px;border:0; id="myiframe"></iframe></div>';
+    echo '<div><iframe src="http://35.154.128.159:83/wp-content/themes/right_advice/admin_part/all-rating-comment.php" style="width:95%;height:800px;border:0; id="myiframe"></iframe></div>';
 } 
 
 add_action( 'admin_menu', 'report' );
@@ -609,7 +609,7 @@ function report(){
 }
 
 function all_report(){
-    echo '<div><iframe src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/admin_part/report.php" style="width:95%;height:800px;border:0; id="myiframe"></iframe></div>';
+    echo '<div><iframe src="http://35.154.128.159:83/wp-content/themes/right_advice/admin_part/report.php" style="width:95%;height:800px;border:0; id="myiframe"></iframe></div>';
 } 
 
 

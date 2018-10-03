@@ -74,7 +74,7 @@ $htmlContent = '
                                         <tbody>
                                         	<tr>
                                             	<td width="30"></td>
-                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://curedincurable.com/rightadvice" target="_blank"><img src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg"></a></td>
+                                                <td align="center" valign="middle" style="padding:0;margin:0;font-size:0;line-height:0"><a href="http://35.154.128.159:83" target="_blank"><img src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg"></a></td>
                                                 <td width="30"></td>
                                             </tr>
                                        	</tbody>
@@ -151,7 +151,7 @@ $headers .= 'From: Right Advice <'.$from.'>'."\r\n".
 
 					// Send email
 					if(mail($to,$subject,$htmlContent,$headers)){
-						echo "<h1 stye='text-align:center'>Email Confirmed Successfully! </h1><br><p><a href='http://curedincurable.com/rightadvice/user-login'>GO TO LOGIN PAGE</a></p>";
+						echo "<h1 stye='text-align:center'>Email Confirmed Successfully! </h1><br><p><a href='http://35.154.128.159:83/user-login'>GO TO LOGIN PAGE</a></p>";
 					
 					}else{
 						echo 'Email sending fail.';

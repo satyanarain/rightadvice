@@ -35,7 +35,7 @@
 						<div class="profile-content">
 
 <div class="title-content">
-<a href="http://curedincurable.com/rightadvice/lawyers" class="btn btn-primary askbtn" style="float:right;">Find A Lawyer </a>
+<a href="http://35.154.128.159:83/lawyers" class="btn btn-primary askbtn" style="float:right;">Find A Lawyer </a>
 
 							
 						</div>

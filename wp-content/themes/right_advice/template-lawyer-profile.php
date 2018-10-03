@@ -77,7 +77,7 @@
 						<div class="conten-desc">
 							<div class="cbp-l-project-desc-text">
 							<p><?php if($lawyer->profile_image != ''){ ?>
-								<img src="http://curedincurable.com/rightadvice/lawyer/profile_pics/<?=$lawyer->profile_image?>" alt="" class="proimg">
+								<img src="http://35.154.128.159:83/lawyer/profile_pics/<?=$lawyer->profile_image?>" alt="" class="proimg">
 							<?php } else{ ?>
 								<img src="<?=bloginfo('template_url')?>/images/no-image.jpg" alt="" class="proimg">
 							<?php } ?><?=nl2br($lawyer->about)?></p>

@@ -6,7 +6,7 @@ ob_start();
 
 if(!isset($_SESSION['lawyerEmail']))
 {
-	header('location:http://curedincurable.com/rightadvice/lawyer-login');
+	header('location:http://35.154.128.159:83/lawyer-login');
 }
 //echo $_SESSION['lawyerEmail']."Hello sandy";
 ?>
@@ -82,14 +82,14 @@ $lawyer = mysql_fetch_assoc($result);
 								?>
 								<button class="dropbtn"> <i class="fa fa-user pr-5"></i> lawyer account</button>
 								<div class="dropdown-content">
-									<a href="http://curedincurable.com/rightadvice/lawyer/dashboard"> dashboard</a>
+									<a href="http://35.154.128.159:83/lawyer/dashboard"> dashboard</a>
 									<a href="lawyer_ajax?lid=<?=base64_encode($_SESSION['lawyerEmail'])?>">logout</a>
 								</div>	
 								<?php }else{?>
 								<button class="dropbtn"> <i class="fa fa-sign-in pr-5"></i> login</button>
 								<div class="dropdown-content">
-									<a href="http://curedincurable.com/rightadvice/lawyer-login/">lawyer login</a>
-									<a href="http://curedincurable.com/rightadvice/user-login/">user login</a>
+									<a href="http://35.154.128.159:83/lawyer-login/">lawyer login</a>
+									<a href="http://35.154.128.159:83/user-login/">user login</a>
 								</div>
 								<?php }?>
 								
@@ -104,8 +104,8 @@ $lawyer = mysql_fetch_assoc($result);
 							<!--div class="dropdown pull-right">
 							  <button class="dropbtn"> <i class="fa fa-user-plus"></i> SIGNUP</button>
 							  <div class="dropdown-content">
-								<a href="http://curedincurable.com/rightadvice/lawyer-registration/">LAWYER SIGNUP</a>
-								<a href="http://curedincurable.com/rightadvice/user-registration/">USER SIGNUP</a>
+								<a href="http://35.154.128.159:83/lawyer-registration/">LAWYER SIGNUP</a>
+								<a href="http://35.154.128.159:83/user-registration/">USER SIGNUP</a>
 							  </div>
 							</div-->
 							<!-- header-top-second end -->
@@ -125,7 +125,7 @@ $lawyer = mysql_fetch_assoc($result);
 							<div class="header-first clearfix">
 								<!-- logo -->
 								<div id="logo" class="logo">
-									<a href="http://curedincurable.com/rightadvice/"><img id="logo_img" src="http://curedincurable.com/rightadvice/wp-content/themes/right_advice/images/logo.jpg" alt="Right Advice"></a>
+									<a href="http://35.154.128.159:83/"><img id="logo_img" src="http://35.154.128.159:83/wp-content/themes/right_advice/images/logo.jpg" alt="Right Advice"></a>
 								</div>
 								<!-- name-and-slogan -->
 							</div>
@@ -157,16 +157,16 @@ $lawyer = mysql_fetch_assoc($result);
 												<ul class="nav navbar-nav ">
 													<!-- mega-menu start -->
 													<li class=" active" style="">
-														<a href="http://curedincurable.com/rightadvice/" class="dropdown-toggle">Home</a>
+														<a href="http://35.154.128.159:83/" class="dropdown-toggle">Home</a>
 													</li>
 													<!-- mega-menu end -->
 													<!-- mega-menu start -->
-													<li><a  href="http://curedincurable.com/rightadvice/about-us/">About</a></li>
-													<li><a  href="http://curedincurable.com/rightadvice/lawyers/">Find A Lawyer</a></li>
-													<li ><a href="http://curedincurable.com/rightadvice/ask-a-question/">Ask A Question </a></li>
-													<li ><a href="http://curedincurable.com/rightadvice/news/">News</a></li>
-													<li ><a href="http://curedincurable.com/rightadvice/blog/">Blog</a></li>
-													<li ><a href="http://curedincurable.com/rightadvice/contact/">Contact</a></li>
+													<li><a  href="http://35.154.128.159:83/about-us/">About</a></li>
+													<li><a  href="http://35.154.128.159:83/lawyers/">Find A Lawyer</a></li>
+													<li ><a href="http://35.154.128.159:83/ask-a-question/">Ask A Question </a></li>
+													<li ><a href="http://35.154.128.159:83/news/">News</a></li>
+													<li ><a href="http://35.154.128.159:83/blog/">Blog</a></li>
+													<li ><a href="http://35.154.128.159:83/contact/">Contact</a></li>
 												</ul>
 												<!-- main-menu end -->
 												<!-- header dropdown buttons -->
