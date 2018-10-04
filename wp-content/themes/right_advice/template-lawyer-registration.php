@@ -133,17 +133,14 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 
 }
-         $sql = 'SELECT name FROM apps_countries';
-         $result = mysqli_query($conn, $sql);
+         $sql = 'SELECT * FROM apps_countries';
+       echo   $result = mysqli_query($conn, $sql);
 
-         if (mysqli_num_rows($result) > 0) {
+    
             while($row = mysqli_fetch_assoc($result)) {
                echo "Name: " . $row["country_name"]. "<br>";
             }
-         } else {
-            echo "0 results";
-         }
-             
+       
              
              
              
