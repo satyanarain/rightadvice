@@ -11,7 +11,7 @@ function formateData($data)
 
 if(isset($_POST['lawyer_registration']))
 {
-    
+   
 	
 	$full_name = formateData($_POST['full_name']);
 	$email = formateData($_POST['email']);
@@ -77,8 +77,8 @@ if(isset($_POST['lawyer_registration']))
 	}
 	else	
 	{
-		$iss_exists = mysqli_query($con,"select * from ra_front_users where email = '$email' ");
-		$is_exists = mysqli_query($con,"select * from ra_lawyers where email = '$email' ");
+		$iss_exists = mysqli_query($conn,"select * from ra_front_users where email = '$email' ");
+		$is_exists = mysqli_query($conn,"select * from ra_lawyers where email = '$email' ");
 		if(mysqli_num_rows($is_exists) > 0)
 		{
 			$errors = 'Lawyer Email already exists';
@@ -139,7 +139,7 @@ if(isset($_POST['lawyer_registration']))
 			{
 				
 				//$address_new = addslashes($address);
-				$insertData = mysqli_query($con,"insert into ra_lawyers(full_name, email, mobile, s_city, s_country, dob, gender, organization_name, documents, password, status, added_date, mobile_confirm, email_confirm, document_names) values('$full_name', '$email', '$mobile', '$city', '$country', '$dob', '$gender', '$organization_name', '$docs', '".md5($user_password)."', '0', now(), '0', '1', '$dnames')") or die(mysqli_error());
+				$insertData = mysqli_query($conn,"insert into ra_lawyers(full_name, email, mobile, s_city, s_country, dob, gender, organization_name, documents, password, status, added_date, mobile_confirm, email_confirm, document_names) values('$full_name', '$email', '$mobile', '$city', '$country', '$dob', '$gender', '$organization_name', '$docs', '".md5($user_password)."', '0', now(), '0', '1', '$dnames')") or die(mysqli_error());
 				
 				if($insertData)
 				{
@@ -188,7 +188,7 @@ if(isset($_POST['lawyer_login']))
 	else	
 	{
 		
-		$loginData = mysqli_query($con,"select * from ra_lawyers where email = '$email' and password = '".md5($user_password)."' ") or die(mysqli_error());
+		$loginData = mysqli_query($conn,"select * from ra_lawyers where email = '$email' and password = '".md5($user_password)."' ") or die(mysqli_error());
 		
 		if(mysqli_num_rows($loginData) > 0)
 		{
@@ -294,8 +294,8 @@ if(isset($_POST['user_registration']))
 	}
 	else	
 	{
-		$is_exists = mysqli_query($con,"select * from ra_front_users where email = '$email' ");
-		$iss_exists = mysqli_query($con,"select * from ra_lawyers where email = '$email' ");
+		$is_exists = mysqli_query($conn,"select * from ra_front_users where email = '$email' ");
+		$iss_exists = mysqli_query($conn,"select * from ra_lawyers where email = '$email' ");
 		if(mysqli_num_rows($is_exists) > 0)
 		{
 			$errors = 'Client Email already exists.';
@@ -312,7 +312,7 @@ if(isset($_POST['user_registration']))
 			
 			$organization_name = addslashes($organization_name);
 
-			$insertData = mysqli_query($con,"insert into ra_front_users (full_name, email, mobile, s_city, s_country, dob, gender, organization_name, password, status, added_date, mobile_confirm, eid, tid) values('$full_name', '$email', '$mobile', '$city', '$country', '$dob', '$gender', '$organization_name', '".md5($user_password)."', '0', now(), '0', '$eid', '$tid')") or die(mysqli_error());
+			$insertData = mysqli_query($conn,"insert into ra_front_users (full_name, email, mobile, s_city, s_country, dob, gender, organization_name, password, status, added_date, mobile_confirm, eid, tid) values('$full_name', '$email', '$mobile', '$city', '$country', '$dob', '$gender', '$organization_name', '".md5($user_password)."', '0', now(), '0', '$eid', '$tid')") or die(mysqli_error());
 			
 			if($insertData)
 			{
@@ -490,7 +490,7 @@ if(isset($_POST['user_login']))
 	else	
 	{
 		
-		$loginData = mysqli_query($con,"select * from ra_front_users where email = '$email' and password = '".md5($user_password)."' ") or die(mysqli_error());
+		$loginData = mysqli_query($conn,"select * from ra_front_users where email = '$email' and password = '".md5($user_password)."' ") or die(mysqli_error());
 		
 		if(mysqli_num_rows($loginData) > 0)
 		{
@@ -560,7 +560,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'ajax_filter')
 	}
 	
 	//echo $query; die;
-	$sql = mysqli_query($con,$query) or die(mysqli_error());
+	$sql = mysqli_query($conn,$query) or die(mysqli_error());
 	if(mysqli_num_rows($sql) > 0)
 	{ ?>
 		<h4 class="layhd"> (<?php echo mysqli_num_rows($sql); ?>) Lawyers Found</h4>
@@ -589,7 +589,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'ajax_filter')
 				<?php
 
 					
-						$rat = mysqli_query($con,"select rating from ra_lawyer_answer where lawyer_id ='".$lawyer['id']."'")  or die(mysqli_error());
+						$rat = mysqli_query($conn,"select rating from ra_lawyer_answer where lawyer_id ='".$lawyer['id']."'")  or die(mysqli_error());
 						$rating = '0';
 						$rats = '0';
 						$total = mysqli_num_rows($rat);
@@ -735,15 +735,15 @@ if(isset($_POST['add_question']))
 				$docs = implode('^',$docs); 
 			else 
 				$docs = '';
-			$qr = mysqli_query($con,"select id, email, full_name, admin_email from ra_lawyers where email='".$lawyer_id."' ") or die(mysqli_error());
+			$qr = mysqli_query($conn,"select id, email, full_name, admin_email from ra_lawyers where email='".$lawyer_id."' ") or die(mysqli_error());
 			$lawyer_email = mysqli_fetch_assoc($qr);
 
-			$query = mysqli_query($con,"insert into ra_question(lawyer_id, subject, content, documents, added_date, client_id, client_email, document_names) value('".$lawyer_email['id']."', '".$subjects."', '".$content."', '".$docs."', '".$added_date."', '".$client_id."', '".$client_email."', '".$dnames."')") or die(mysqli_error());
+			$query = mysqli_query($conn,"insert into ra_question(lawyer_id, subject, content, documents, added_date, client_id, client_email, document_names) value('".$lawyer_email['id']."', '".$subjects."', '".$content."', '".$docs."', '".$added_date."', '".$client_id."', '".$client_email."', '".$dnames."')") or die(mysqli_error());
 			
 			if($query)
 			{ 
 				
-				$qr1 = mysqli_query($con,"select full_name from ra_front_users where id='".$client_id."' ") or die(mysqli_error());
+				$qr1 = mysqli_query($conn,"select full_name from ra_front_users where id='".$client_id."' ") or die(mysqli_error());
 				$user_name = mysqli_fetch_assoc($qr1);
 			
 				$to = $lawyer_email['email'];
@@ -975,7 +975,7 @@ if(isset($_POST['forgot_password']))
 {
 	$email = $_POST['email'];
 	
-	$query = mysqli_query($con,"select full_name,email from ra_front_users where email='$email' AND email_confirm='1' ") or die(mysqli_error());
+	$query = mysqli_query($conn,"select full_name,email from ra_front_users where email='$email' AND email_confirm='1' ") or die(mysqli_error());
 	if(mysqli_num_rows($query) > 0)
 	{
 		$data = mysqli_fetch_assoc($query);
@@ -984,7 +984,7 @@ if(isset($_POST['forgot_password']))
 	}
 	else 
 	{
-		$query = mysqli_query($con,"select full_name,email from ra_lawyers where email='$email' AND status='1'  AND email_confirm='1' ") or die(mysqli_error());
+		$query = mysqli_query($conn,"select full_name,email from ra_lawyers where email='$email' AND status='1'  AND email_confirm='1' ") or die(mysqli_error());
 		if(mysqli_num_rows($query) > 0)
 		{
 			$data = mysqli_fetch_assoc($query);
@@ -1110,7 +1110,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'change_forgot_password')
 	//print_r($_POST);
 	$email = $_POST['email'];
 	$password = $_POST['password'];
-	$query = mysqli_query($con,"update ra_front_users set password = '".md5($password)."' where email = '".$email."' ");
+	$query = mysqli_query($conn,"update ra_front_users set password = '".md5($password)."' where email = '".$email."' ");
 	if($query)
 	{
 		$errors = "Password Changed Successfully";
@@ -1119,7 +1119,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'change_forgot_password')
 	}
 	else
 	{
-		$query1 = mysqli_query($con,"update ra_lawyers set password = '".md5($password)."' where email = '".$email."' ");
+		$query1 = mysqli_query($conn,"update ra_lawyers set password = '".md5($password)."' where email = '".$email."' ");
 		if($query1){
 			$errors = "Password Changed Successfully";
 			unset($_SESSION['tid']);
