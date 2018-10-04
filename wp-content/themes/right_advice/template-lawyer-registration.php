@@ -121,7 +121,7 @@ include("config.php");
                                             $sql = 'SELECT name FROM apps_countries';
          $result = mysqli_query($conn, $sql);
 
-         if (mysqli_num_rows($result) > 0) {
+      
           
 					?>
 					<span class="input-group-addon"><i class="fa fa-address-card" requiredaria-hidden="true"></i></span>
@@ -131,7 +131,7 @@ include("config.php");
 					    while($country = mysqli_fetch_assoc($result))
 					{ ?>
 						<option value="<?php echo $country['country_name']; ?>" <?php if(isset($_SESSION['country']) && $_SESSION['country'] == $country['country_name']) echo 'selected';?>><?php echo $country['country_name']; ?></option>
-            <?php } } ?>
+            <?php }  ?>
 					   
 					</select>
 				</div>
