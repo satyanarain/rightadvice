@@ -118,7 +118,8 @@ include("config.php");
 				<div class="input-group">
 					<?php
 					   $sql = "SELECT * FROM apps_countries";
-                                           $res=mysqli_query($conn, $sql) or die(mysqli_error());
+                                         echo "==========="  .$res=mysqli_query($conn, $sql) or die(mysqli_error());
+                                           
 					?>
 					<span class="input-group-addon"><i class="fa fa-address-card" requiredaria-hidden="true"></i></span>
 					<select name="country" id="country" required class="form-control"><?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>
