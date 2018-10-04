@@ -46,34 +46,34 @@ if(isset($_POST['lawyer_registration']))
 	
 	
 	if($full_name == ''){
-		$errors = 'Full Name is required';
+		echo $errors = 'Full Name is required';
 	}
 	else if(preg_match("/[^A-Za-z'-]/", $First)){
-		$errors = 'Only alphanumeric and blank spaces allowed in Full Name.'; 
+		echo $errors = 'Only alphanumeric and blank spaces allowed in Full Name.'; 
 	}
 	else if($email == ''){
-		$errors = 'Email is required.';
+		echo $errors = 'Email is required.';
 	}
 	else if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {	
-		$errors = 'Invalid email format.';
+		echo $errors = 'Invalid email format.';
 	}
 	else if($mobile == ''){
-		$errors = 'Mobile Number is required.';
+		echo $errors = 'Mobile Number is required.';
 	}
 	else if(!is_numeric($mobile)){
-		$errors = 'Invalid Mobile Number.';
+		echo $errors = 'Invalid Mobile Number.';
 	}
 	else if($gender == ''){
-		$errors = 'Please select your Gender.';
+		echo $errors = 'Please select your Gender.';
 	}
 	else if($user_password == ''){
-		$errors = 'Please enter your Password.';
+		echo $errors = 'Please enter your Password.';
 	}
 	else if($confirm_password == ''){
-		$errors = 'Please confirm your Password.';
+		echo $errors = 'Please confirm your Password.';
 	}
 	else if($user_password != $confirm_password){
-		$errors = 'Passwords do not match.';
+		echo $errors = 'Passwords do not match.';
 	}
 	else	
 	{
@@ -81,10 +81,10 @@ if(isset($_POST['lawyer_registration']))
 		$is_exists = mysqli_query($conn,"select * from ra_lawyers where email = '$email' ");
 		if(mysqli_num_rows($is_exists) > 0)
 		{
-			$errors = 'Lawyer Email already exists';
+			echo $errors = 'Lawyer Email already exists';
 		}
 		else if(mysqli_num_rows($iss_exists) > 0){
-			$errors = 'Client Email already exists';
+			echo $errors = 'Client Email already exists';
 		}
 		else
 		{
@@ -105,11 +105,11 @@ if(isset($_POST['lawyer_registration']))
 					}	       
 					if ($_FILES['documents']['error'][$f] == 0) {	           
 						if ($_FILES['documents']['size'][$f] > $max_file_size) {
-							$errors = "$name is too large! File size should be below 5 MB.";
+							echo $errors = "$name is too large! File size should be below 5 MB.";
 							continue; // Skip large files
 						}
 						if( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
-							$errors = "$name is not a valid format. Please upload only jpg, png, pdf, docx, doc, docs, txt or rtf extension files.";
+							echo $errors = "$name is not a valid format. Please upload only jpg, png, pdf, docx, doc, docs, txt or rtf extension files.";
 							continue; // Skip invalid file formats
 						}
 						else{ // No error found! Move uploaded files 
@@ -180,13 +180,13 @@ if(isset($_POST['lawyer_login']))
 	$user_password = formateData($_POST['user_password']);
 	
 	if($email == ''){
-		$errors = 'Please enter your email.';
+		echo $errors = 'Please enter your email.';
 	}
 	else if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {	
-		$errors = 'Invalid email format.';
+		echo $errors = 'Invalid email format.';
 	}
 	else if($user_password == ''){
-		$errors = 'Please enter your password.';
+		echo $errors = 'Please enter your password.';
 	}
 	else	
 	{
@@ -266,34 +266,34 @@ if(isset($_POST['user_registration']))
 	
 	
 	if($full_name == ''){
-		$errors = 'Full Name is required.';
+		echo $errors = 'Full Name is required.';
 	}
 	else if(preg_match("/[^A-Za-z'-]/", $First)){
-		$errors = 'Only alphanumeric and blank spaces allowed in Full Name.'; 
+		echo $errors = 'Only alphanumeric and blank spaces allowed in Full Name.'; 
 	}
 	else if($email == ''){
-		$errors = 'Email is required.';
+		echo $errors = 'Email is required.';
 	}
 	else if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {	
-		$errors = 'Invalid email format.';
+		echo $errors = 'Invalid email format.';
 	}
 	else if($mobile == ''){
-		$errors = 'Mobile Number is required.';
+		echo $errors = 'Mobile Number is required.';
 	}
 	else if(!is_numeric($mobile)){
-		$errors = 'Invalid Mobile Number.';
+		echo $errors = 'Invalid Mobile Number.';
 	}
 	else if($gender == ''){
-		$errors = 'Please select your Gender.';
+		echo $errors = 'Please select your Gender.';
 	}
 	else if($user_password == ''){
-		$errors = 'Please enter your Password.';
+		echo $errors = 'Please enter your Password.';
 	}
 	else if($confirm_password == ''){
-		$errors = 'Please confirm your Password.';
+		echo $errors = 'Please confirm your Password.';
 	}
 	else if($user_password != $confirm_password){
-		$errors = 'Passwords do not match.';
+		echo $errors = 'Passwords do not match.';
 	}
 	else	
 	{
@@ -301,11 +301,11 @@ if(isset($_POST['user_registration']))
 		$iss_exists = mysqli_query($conn,"select * from ra_lawyers where email = '$email' ");
 		if(mysqli_num_rows($is_exists) > 0)
 		{
-			$errors = 'Client Email already exists.';
+			echo $errors = 'Client Email already exists.';
 		}
 		else if(mysqli_num_rows($iss_exists) > 0)
 		{
-			$errors = 'Lawyer Email already exists.';
+			echo $errors = 'Lawyer Email already exists.';
 		}
 		else
 		{
@@ -449,19 +449,19 @@ $headers .= 'From: Right Advice <'.$from.'>'."\r\n".
 					$_SESSION['country'] = '';
 
 				}else{
-					$errors = 'Email sending failed.';
+					echo $errors = 'Email sending failed.';
 				}
 				
 				
 			}
 			else{
-				$errors = 'Data not submitted, please try again!';
+				echo $errors = 'Data not submitted, please try again!';
 			}
 		}
 	}
-	//echo $errors;
+	//echo echo $errors;
 	if(!empty($errors)){
-		$_SESSION['reg_error'] = $errors;
+		$_SESSION['reg_error'] =$errors;
 	}else if(!empty($succ_msg)){
 		$_SESSION['reg_succ'] = $succ_msg;
 	}
@@ -482,13 +482,13 @@ if(isset($_POST['user_login']))
 	}
 	
 	if($email == ''){
-		$errors = 'Please enter your email.';
+		echo $errors = 'Please enter your email.';
 	}
 	else if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {	
-		$errors = 'Invalid email format';
+		echo $errors = 'Invalid email format';
 	}
 	else if($user_password == ''){
-		$errors = 'Please enter your password.';
+		echo $errors = 'Please enter your password.';
 	}
 	else	
 	{
@@ -654,7 +654,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'ajax_filter')
 if(isset($_POST['add_question']))
 {
 	//print_r($_POST); die;
-	$errors = '';
+	echo $errors = '';
 	
 	$valid_formats = array("jpg", "png", "pdf", "docx", "doc", "doc", "txt", "rtf");
 	$max_file_size = 1024*2000; //1000 kb
@@ -688,11 +688,11 @@ if(isset($_POST['add_question']))
 	
 	if($subjects == '')
 	{
-		$errors = 'Subject is required';
+		echo $errors = 'Subject is required';
 	}
 	else if($content == '')
 	{
-		$errors = 'Please enter your query';
+		echo $errors = 'Please enter your query';
 	}
 	else
 	{
@@ -706,11 +706,11 @@ if(isset($_POST['add_question']))
 				}	       
 				if ($_FILES['upload']['error'][$f] == 0) {	           
 					if ($_FILES['upload']['size'][$f] > $max_file_size) {
-						$errors = "$name is too large!. File size must be below 2 MB.";
+						echo $errors = "$name is too large!. File size must be below 2 MB.";
 						continue; // Skip large files
 					}
 					elseif( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
-						$errors = "$name is not a valid format. Please upload only jpg, png, pdf, docx, doc, docs, txt or rtf extension files.";
+						echo $errors = "$name is not a valid format. Please upload only jpg, png, pdf, docx, doc, docs, txt or rtf extension files.";
 						continue; // Skip invalid file formats
 					}
 					else{ // No error found! Move uploaded files 
@@ -731,7 +731,7 @@ if(isset($_POST['add_question']))
 			}
 		}
 		
-		//echo $errors; die;
+		//echo echo $errors; die;
 		if($errors == '')
 		{
 			if($docs)
@@ -949,16 +949,16 @@ if(isset($_POST['add_question']))
 					if(mail($to1,$subject1,$message,$headers)){
 						$succ_msg = 'Your question submitted successfully. Please wait for response from lawyer.';
 					}else{
-						$errors = 'Client Email sending fail.';
+						echo $errors = 'Client Email sending fail.';
 					}
 				}else{
-					$errors = 'Lawyer Email sending fail.';
+					echo $errors = 'Lawyer Email sending fail.';
 				}
 				
 			}
 			else
 			{
-				$errors = 'Your question not submitted, please try again';
+				echo $errors = 'Your question not submitted, please try again';
 			} 
 		}
 	}
@@ -966,7 +966,7 @@ if(isset($_POST['add_question']))
 	if($succ_msg != '')
 		$_SESSION['reg_succ'] = $succ_msg;
 	else
-		$_SESSION['reg_error'] = $errors;
+		$_SESSION['reg_error'] =  $errors;
 	
 	$id = base64_encode($lawyer_id);
 	$url = "http://35.154.128.159:83/question?qid=".$id;
@@ -996,7 +996,7 @@ if(isset($_POST['forgot_password']))
 		}
 		else
 		{
-			$errors = "Sorry, this email is not registered";
+			echo $errors = "Sorry, this email is not registered";
 		}
 	}	
 	if(mysqli_num_rows($query) > 0)
@@ -1094,14 +1094,14 @@ if(isset($_POST['forgot_password']))
 					$succ_msg = "Link to reset password has been sent on your registered email address";
 				}
 				else{
-					$errors = "Email not send. Please try again";
+					echo $errors = "Email not send. Please try again";
 				}
 	}
 
 	if($succ_msg != '')
 		$_SESSION['reg_succ'] = $succ_msg;
 	else
-		$_SESSION['reg_error'] = $errors;
+		$_SESSION['reg_error'] =  $errors;
 	
 	$url = "http://35.154.128.159:83/forgot-password";
 	header("location:$url");	
@@ -1116,7 +1116,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'change_forgot_password')
 	$query = mysqli_query($conn,"update ra_front_users set password = '".md5($password)."' where email = '".$email."' ");
 	if($query)
 	{
-		$errors = "Password Changed Successfully";
+		echo $errors = "Password Changed Successfully";
 		unset($_SESSION['tid']);
 		unset($_SESSION['eid']);
 	}
@@ -1124,15 +1124,15 @@ if(isset($_POST['action']) && $_POST['action'] == 'change_forgot_password')
 	{
 		$query1 = mysqli_query($conn,"update ra_lawyers set password = '".md5($password)."' where email = '".$email."' ");
 		if($query1){
-			$errors = "Password Changed Successfully";
+			echo $errors = "Password Changed Successfully";
 			unset($_SESSION['tid']);
 			unset($_SESSION['eid']);
 		}else{
-			$errors = "Password not changed, there may be some problem please try again";
+			echo $errors = "Password not changed, there may be some problem please try again";
 		}
 	}
 	
 	
-	echo $errors;
+	echo  $errors;
 }
 ?>
