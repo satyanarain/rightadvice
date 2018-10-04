@@ -167,11 +167,11 @@ function formatData($data)
 							$tbl_name="ra_lawyers";	
 							$adjacents = 3;
 							$query = "SELECT COUNT(*) as num FROM $tbl_name where status='1' ";
-							$total_pages = mysql_fetch_array(mysql_query($query));
+							$total_pages = mysqli_fetch_array(mysqli_query($conn,$query));
 							$total_pages = $total_pages[num];
 							
 							$pref = "SELECT * FROM $tbl_name where status='1' AND prefered='1' ";
-							$pref_pages = mysql_num_rows(mysql_query($query));
+							$pref_pages = mysqli_num_rows(mysqli_query($conn,$query));
 							//echo $pref_pages = $pref_pages[num];
 							
 							if($pref_pages > 50)

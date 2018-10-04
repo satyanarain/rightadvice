@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include('../wp-config.php');
-
+include('config.php');
 ob_start();
 
 if(!isset($_SESSION['lawyerEmail']))
@@ -12,8 +12,8 @@ if(!isset($_SESSION['lawyerEmail']))
 ?>
 <?php 
 
-$result = mysql_query("select * from ra_lawyers where email = '".$_SESSION['lawyerEmail']."'") or die(mysql_error());
-$lawyer = mysql_fetch_assoc($result);
+$result = mysqli_query($conn,"select * from ra_lawyers where email = '".$_SESSION['lawyerEmail']."'") or die(mysqli_error());
+$lawyer = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>

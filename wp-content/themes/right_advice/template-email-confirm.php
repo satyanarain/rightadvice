@@ -3,8 +3,10 @@
 * Template Name: Email Confirm Page
 */
 session_start();
+include("config.php");
 ob_start(); 
 get_header();
+
 ?>
 <div class="breadcrumb-container">
 	<div class="container">
@@ -30,10 +32,10 @@ get_header();
 			$eid = ($_GET['eid']);
 			$email = base64_decode($eid);
 			
-			$email_data = mysql_query("select * from ra_front_users where email = '$email' and tid = '$tid' and eid = '$eid' and email_confirm != 1 ") or die(mysql_error()) ;
-			if(mysql_num_rows($email_data) > 0)
+			$email_data = mysqli_query($conn,"select * from ra_front_users where email = '$email' and tid = '$tid' and eid = '$eid' and email_confirm != 1 ") or die(mysqli_error()) ;
+			if(mysqli_num_rows($email_data) > 0)
 			{
-				$data = mysql_fetch_assoc($email_data);
+				$data = mysqli_fetch_assoc($email_data);
 				$ttid = $data['tid'];
 				$eeid = $data['eid'];
 			}
@@ -42,11 +44,11 @@ get_header();
 			{
 				if(isset($_GET['tp']) && base64_decode($_GET['tp']) == 'user' )
 				{
-					$query = mysql_query("update ra_front_users set email_confirm = 1, tid = '', eid = '' where email='$email' ") or die(mysql_error());
+					$query = mysqli_query($conn,"update ra_front_users set email_confirm = 1, tid = '', eid = '' where email='$email' ") or die(mysqli_error());
 				}
 				/*
 				else{
-					$query = mysql_query("update ra_lawyers set email_confirm = 1 where email='$email' ") or die(mysql_error());
+					$query = mysqli_query($conn,"update ra_lawyers set email_confirm = 1 where email='$email' ") or die(mysqli_error());
 				}
 				*/
 				

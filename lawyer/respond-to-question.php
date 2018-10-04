@@ -1,8 +1,8 @@
 <?php 
 	include('lawyer-header.php');
-	$query = mysql_query("select * from ra_question where lawyer_id='".$_SESSION['lawyerID']."' order by id desc");
-	//$query = mysql_query("select * from ra_question where status='0' AND lawyer_id='".$_SESSION['lawyerID']."' order by id desc");
-	//$query1 = mysql_query("select * from ra_question where status='1' AND lawyer_id='".$_SESSION['lawyerID']."' order by id desc");
+	$query = mysqli_query($conn,"select * from ra_question where lawyer_id='".$_SESSION['lawyerID']."' order by id desc");
+	//$query = mysqli_query($conn,"select * from ra_question where status='0' AND lawyer_id='".$_SESSION['lawyerID']."' order by id desc");
+	//$query1 = mysqli_query($conn,"select * from ra_question where status='1' AND lawyer_id='".$_SESSION['lawyerID']."' order by id desc");
 												
 												
 ?>
@@ -44,10 +44,10 @@
 								<!--div class="portlet-title tabbable-line clearfix">
 									<ul class="nav nav-tabs">
 										<li class="active">
-										  <a href="#tab_1_1" data-toggle="tab">Unanswered Question (<?=mysql_num_rows($query)?>)</a>
+										  <a href="#tab_1_1" data-toggle="tab">Unanswered Question (<?=mysqli_num_rows($query)?>)</a>
 										</li>
 										<li class="">
-										  <a href="#tab_1_3" data-toggle="tab">Answered Question (<?=mysql_num_rows($query1)?>)</a>
+										  <a href="#tab_1_3" data-toggle="tab">Answered Question (<?=mysqli_num_rows($query1)?>)</a>
 										</li>
 									</ul>
 								</div-->
@@ -68,10 +68,10 @@
 												</thead>
 												<tbody>
 												<?php $no = 1;
-												if(mysql_num_rows($query) > 0){
-												while($unread = mysql_fetch_assoc($query)){
-													$qr = mysql_query("select full_name from ra_front_users where email='".$unread['client_email']."' ");
-													$uname = mysql_fetch_assoc($qr);
+												if(mysqli_num_rows($query) > 0){
+												while($unread = mysqli_fetch_assoc($query)){
+													$qr = mysqli_query($conn,"select full_name from ra_front_users where email='".$unread['client_email']."' ");
+													$uname = mysqli_fetch_assoc($qr);
 												?>
 													<tr>
 														<td align="center"><?=$no++?>.</td>
@@ -111,10 +111,10 @@
 												</thead>
 												<tbody>
 												<?php $no = 1;
-												if(mysql_num_rows($query1) > 0){
-												while($unread = mysql_fetch_assoc($query1)){
-													$qr = mysql_query("select full_name from ra_front_users where email='".$unread['client_email']."' ");
-													$uname = mysql_fetch_assoc($qr);
+												if(mysqli_num_rows($query1) > 0){
+												while($unread = mysqli_fetch_assoc($query1)){
+													$qr = mysqli_query($conn,"select full_name from ra_front_users where email='".$unread['client_email']."' ");
+													$uname = mysqli_fetch_assoc($qr);
 												?>
 													<tr>
 														<td align="center"><?=$no++?>.</td>

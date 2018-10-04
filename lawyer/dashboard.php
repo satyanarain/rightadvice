@@ -69,11 +69,11 @@
 									</thead>
 									<tbody>
 									<?php $no = 1;
-									$query = mysql_query("select * from ra_question where status='0' AND lawyer_id='".$_SESSION['lawyerID']."' order by id desc");
-									if(mysql_num_rows($query) > 0){
-									while($unread = mysql_fetch_assoc($query)){
-										$qr = mysql_query("select full_name from ra_front_users where email='".$unread['client_email']."' ");
-										$uname = mysql_fetch_assoc($qr);
+									$query = mysqli_query($conn,"select * from ra_question where status='0' AND lawyer_id='".$_SESSION['lawyerID']."' order by id desc");
+									if(mysqli_num_rows($query) > 0){
+									while($unread = mysqli_fetch_assoc($query)){
+										$qr = mysqli_query($conn,"select full_name from ra_front_users where email='".$unread['client_email']."' ");
+										$uname = mysqli_fetch_assoc($qr);
 									?>
 										<tr>
 											<td><?=$no++?></td>
@@ -102,12 +102,12 @@
 							<h3>Latest Ratings & Comments</h3>
 							
 								<?php $sno = 1;
-								$query = mysql_query("select * from ra_lawyer_answer where rating !='' AND feedback != '' AND lawyer_id='".$_SESSION['lawyerID']."' order by id desc limit 5");
+								$query = mysqli_query($conn,"select * from ra_lawyer_answer where rating !='' AND feedback != '' AND lawyer_id='".$_SESSION['lawyerID']."' order by id desc limit 5");
 	
-									if(mysql_num_rows($query) > 0){
-									while($result = mysql_fetch_assoc($query)){
-										$qr = mysql_query("select full_name from ra_front_users where id='".$result['client_id']."' ");
-										$uname = mysql_fetch_assoc($qr);
+									if(mysqli_num_rows($query) > 0){
+									while($result = mysqli_fetch_assoc($query)){
+										$qr = mysqli_query($conn,"select full_name from ra_front_users where id='".$result['client_id']."' ");
+										$uname = mysqli_fetch_assoc($qr);
 									
 								?>
 								<span><?=$sno++?></span>

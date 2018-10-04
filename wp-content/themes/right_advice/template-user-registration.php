@@ -114,13 +114,18 @@ get_header();
 			<div class="col-md-4 inputGroupContainer">
 				<div class="input-group">
 					<?php
-					   $sql = mysql_query("SELECT * FROM apps_countries") or die(mysql_error());
+					 //  $sql = mysql_query("SELECT * FROM apps_countries") or die(mysql_error());
+                                            $sql = 'SELECT * FROM apps_countries';
+        $result = mysqli_query($conn, $sql);
+                                           
+                                           
+                                           
 					?>
 					<span class="input-group-addon"><i class="fa fa-address-card" requiredaria-hidden="true"></i></span>
 					<select name="country" id="country" required class="form-control"><?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>
 					    <option value="" selected>Select Country</option>
 					    <?php
-					    while($country = mysql_fetch_array($sql))
+					    while($country = mysqli_fetch_assoc($result)) 
 					{ ?>
 						<option value="<?php echo $country['country_name']; ?>" <?php if(isset($_SESSION['country']) && $_SESSION['country'] == $country['country_name']) echo 'selected';?>><?php echo $country['country_name']; ?></option>
 					<?php } ?>
