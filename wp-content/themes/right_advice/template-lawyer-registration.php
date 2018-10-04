@@ -117,23 +117,7 @@ include("config.php");
 			<div class="col-md-4 inputGroupContainer">
 				<div class="input-group">
 					<?php
-$servername = "localhost";
-$database = "curedvtv_rightadvice_new";
-$username = "root";
-$password = "root@1234";
-
-// Create connection
-
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Check connection
-
-if (!$conn) {
-
-    die("Connection failed: " . mysqli_connect_error());
-
-}
-         $sql = 'SELECT * FROM apps_countries';
+        $sql = 'SELECT * FROM apps_countries';
         $result = mysqli_query($conn, $sql);
 
 					?>
@@ -143,7 +127,7 @@ if (!$conn) {
 					    <?php
 					    while($row = mysqli_fetch_assoc($result)) 
 					{ ?>
-						<option value="<?php echo $row['country_name']; ?>" <?php if(isset($_SESSION['country']) && $_SESSION['country'] == $country['country_name']) echo 'selected';?>><?php echo $country['country_name']; ?></option>
+						<option value="<?php echo $row['country_name']; ?>" <?php if(isset($_SESSION['country']) && $_SESSION['country'] == $row['country_name']) echo 'selected';?>><?php echo $row['country_name']; ?></option>
             <?php  }  ?>
 					   
 					</select>
