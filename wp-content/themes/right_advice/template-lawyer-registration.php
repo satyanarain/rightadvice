@@ -118,24 +118,57 @@ include("config.php");
 				<div class="input-group">
 					<?php
 					
-                                            $sql = 'SELECT name FROM apps_countries';
+//                                            $sql = 'SELECT name FROM apps_countries';
+//         $result = mysqli_query($conn, $sql);
+//
+//      $country = mysqli_fetch_assoc($conn,$result);
+//      
+//           $country1 = mysqli_fetch_assoc($result);
+//           
+//           echo $country['country_name'];
+//             echo "11111111111111111111".$country1['country_name'];
+//             
+//             
+//               $dbhost = 'localhost:3306';
+//         $dbuser = 'root';
+//         $dbpass = '';
+//         $dbname = 'TUTORIALS';
+//         $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
+   
+//         if(! $conn ) {
+//            die('Could not connect: ' . mysqli_error());
+//         }
+//         echo 'Connected successfully<br>';
+         $sql = 'SELECT name FROM apps_countries';
          $result = mysqli_query($conn, $sql);
 
-      $country = mysqli_fetch_assoc($conn,$result);
-      
-           $country1 = mysqli_fetch_assoc($result);
-           
-           echo $country['country_name'];
-             echo "11111111111111111111".$country1['country_name'];
+         if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+               echo "Name: " . $row["country_name"]. "<br>";
+            }
+         } else {
+            echo "0 results";
+         }
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
 					?>
 					<span class="input-group-addon"><i class="fa fa-address-card" requiredaria-hidden="true"></i></span>
 					<select name="country" id="country" required class="form-control"><?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>
 					    <option value="" selected>Select Country</option>
 					    <?php
-					    while($country = mysqli_fetch_assoc($result))
-					{ ?>
-						<option value="<?php echo $country['country_name']; ?>" <?php if(isset($_SESSION['country']) && $_SESSION['country'] == $country['country_name']) echo 'selected';?>><?php echo $country['country_name']; ?></option>
-            <?php }  ?>
+					    //while($country = mysqli_fetch_assoc($result))
+					//{ ?>
+						<option value="<?php //echo $country['country_name']; ?>" <?php //if(isset($_SESSION['country']) && $_SESSION['country'] == $country['country_name']) echo 'selected';?>><?php //echo $country['country_name']; ?></option>
+            <?php // }  ?>
 					   
 					</select>
 				</div>

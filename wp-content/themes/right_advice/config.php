@@ -1,5 +1,5 @@
 <?php 
-$con = mysqli_connect("localhost","root","root@1234","curedvtv_rightadvice_new");
+
 $servername = "localhost";
 $database = "curedvtv_rightadvice_new";
 $username = "root";
