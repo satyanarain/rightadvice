@@ -117,28 +117,22 @@ include("config.php");
 			<div class="col-md-4 inputGroupContainer">
 				<div class="input-group">
 					<?php
-					
-//                                            $sql = 'SELECT name FROM apps_countries';
-//         $result = mysqli_query($conn, $sql);
-//
-//      $country = mysqli_fetch_assoc($conn,$result);
-//      
-//           $country1 = mysqli_fetch_assoc($result);
-//           
-//           echo $country['country_name'];
-//             echo "11111111111111111111".$country1['country_name'];
-//             
-//             
-//               $dbhost = 'localhost:3306';
-//         $dbuser = 'root';
-//         $dbpass = '';
-//         $dbname = 'TUTORIALS';
-//         $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
-   
-//         if(! $conn ) {
-//            die('Could not connect: ' . mysqli_error());
-//         }
-//         echo 'Connected successfully<br>';
+$servername = "localhost";
+$database = "curedvtv_rightadvice_new";
+$username = "root";
+$password = "root@1234";
+
+// Create connection
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Check connection
+
+if (!$conn) {
+
+    die("Connection failed: " . mysqli_connect_error());
+
+}
          $sql = 'SELECT name FROM apps_countries';
          $result = mysqli_query($conn, $sql);
 
