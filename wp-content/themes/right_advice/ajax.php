@@ -11,8 +11,7 @@ function formateData($data)
 
 if(isset($_POST['lawyer_registration']))
 {
-   echo "==============";
-	
+ 
 	$full_name = formateData($_POST['full_name']);
 	$email = formateData($_POST['email']);
 	$mobile = formateData($_POST['mobile']);
@@ -78,10 +77,7 @@ if(isset($_POST['lawyer_registration']))
 	else	
 	{
             
-         echo "============fix error====================="   ;
-            
-            
-            
+      
 		$iss_exists = mysqli_query($conn,"select * from ra_front_users where email = '$email' ");
 		$is_exists = mysqli_query($conn,"select * from ra_lawyers where email = '$email' ");
 		if(mysqli_num_rows($is_exists) > 0)
@@ -142,8 +138,7 @@ if(isset($_POST['lawyer_registration']))
 			
 			if($errors == '')
 			{
-				
-                              echo "============insert error====================="   ;
+			
                             
 				//$address_new = addslashes($address);
 				 $insertData = mysqli_query($conn,"insert into ra_lawyers(full_name, email, mobile, s_city, s_country, dob, gender, organization_name, documents, password, status, added_date, mobile_confirm, email_confirm, document_names) values('$full_name', '$email', '$mobile', '$city', '$country', '$dob', '$gender', '$organization_name', '$docs', '".md5($user_password)."', '0', now(), '0', '1', '$dnames')") or die(mysqli_error($conn));
@@ -162,7 +157,7 @@ if(isset($_POST['lawyer_registration']))
 				$_SESSION['other'] = '';
 				$_SESSION['country'] = '';
 	
-			echo 	$succ_msg = 'Your data submitted successfully. Please wait for approval from Right Advice Team.';
+				$succ_msg = 'Your data submitted successfully. Please wait for approval from Right Advice Team.';
 				} else {
                               echo "trrr";
                                 }	
@@ -176,8 +171,9 @@ if(isset($_POST['lawyer_registration']))
 	}else if(!empty($succ_msg)){
 		$_SESSION['reg_succ'] = $succ_msg;
 	}
-	$url = "http://35.154.128.159:83/lawyer-registration";
-	header("location:$url");
+        
+	echo $url = "http://35.154.128.159:83/lawyer-registration";
+	echo header("location:$url");
 }
 
 /******************************************************************************************************/
