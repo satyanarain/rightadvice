@@ -136,30 +136,15 @@ if (!$conn) {
          $sql = 'SELECT * FROM apps_countries';
         $result = mysqli_query($conn, $sql);
 
-    
-            while($row = mysqli_fetch_assoc($result)) {
-               echo "Name: " . $row["country_name"]. "<br>";
-            }
-       
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
 					?>
 					<span class="input-group-addon"><i class="fa fa-address-card" requiredaria-hidden="true"></i></span>
 					<select name="country" id="country" required class="form-control"><?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>
 					    <option value="" selected>Select Country</option>
 					    <?php
-					    //while($country = mysqli_fetch_assoc($result))
-					//{ ?>
-						<option value="<?php //echo $country['country_name']; ?>" <?php //if(isset($_SESSION['country']) && $_SESSION['country'] == $country['country_name']) echo 'selected';?>><?php //echo $country['country_name']; ?></option>
-            <?php // }  ?>
+					    while($row = mysqli_fetch_assoc($result)) {
+					{ ?>
+						<option value="<?php echo $row['country_name']; ?>" <?php if(isset($_SESSION['country']) && $_SESSION['country'] == $country['country_name']) echo 'selected';?>><?php echo $country['country_name']; ?></option>
+            <?php  }  ?>
 					   
 					</select>
 				</div>
