@@ -483,7 +483,6 @@ function applyFilter(){
 			jQuery('#prev').hide();
 			jQuery('#latest').html(response);
 			jQuery('#latest').show();
-			
 		}
 	});
 }
