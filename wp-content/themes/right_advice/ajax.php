@@ -139,8 +139,11 @@ if(isset($_POST['lawyer_registration']))
 			{
 				
 				//$address_new = addslashes($address);
-				$insertData = mysqli_query($conn,"insert into ra_lawyers(full_name, email, mobile, s_city, s_country, dob, gender, organization_name, documents, password, status, added_date, mobile_confirm, email_confirm, document_names) values('$full_name', '$email', '$mobile', '$city', '$country', '$dob', '$gender', '$organization_name', '$docs', '".md5($user_password)."', '0', now(), '0', '1', '$dnames')") or die(mysqli_error());
+				echo $insertData = mysqli_query($conn,"insert into ra_lawyers(full_name, email, mobile, s_city, s_country, dob, gender, organization_name, documents, password, status, added_date, mobile_confirm, email_confirm, document_names) values('$full_name', '$email', '$mobile', '$city', '$country', '$dob', '$gender', '$organization_name', '$docs', '".md5($user_password)."', '0', now(), '0', '1', '$dnames')") or die(mysqli_error());
 				
+                                
+                                exit();
+                                
 				if($insertData)
 				{
 				
