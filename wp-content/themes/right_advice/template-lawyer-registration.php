@@ -121,8 +121,12 @@ include("config.php");
                                             $sql = 'SELECT name FROM apps_countries';
          $result = mysqli_query($conn, $sql);
 
+      $country = mysqli_fetch_assoc($conn,$result);
       
-          
+           $country1 = mysqli_fetch_assoc($result);
+           
+           echo $country['country_name'];
+             echo "11111111111111111111".$country1['country_name'];
 					?>
 					<span class="input-group-addon"><i class="fa fa-address-card" requiredaria-hidden="true"></i></span>
 					<select name="country" id="country" required class="form-control"><?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>
