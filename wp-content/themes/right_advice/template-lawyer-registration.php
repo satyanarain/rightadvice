@@ -134,7 +134,7 @@ if (!$conn) {
 
 }
          $sql = 'SELECT * FROM apps_countries';
-       echo   $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, $sql);
 
     
             while($row = mysqli_fetch_assoc($result)) {
