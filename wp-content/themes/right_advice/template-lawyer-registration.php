@@ -141,7 +141,7 @@ if (!$conn) {
 					<select name="country" id="country" required class="form-control"><?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>
 					    <option value="" selected>Select Country</option>
 					    <?php
-					    while($row = mysqli_fetch_assoc($result)) {
+					    while($row = mysqli_fetch_assoc($result)) 
 					{ ?>
 						<option value="<?php echo $row['country_name']; ?>" <?php if(isset($_SESSION['country']) && $_SESSION['country'] == $country['country_name']) echo 'selected';?>><?php echo $country['country_name']; ?></option>
             <?php  }  ?>
