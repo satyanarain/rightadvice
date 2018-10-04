@@ -11,8 +11,7 @@ function formateData($data)
 
 if(isset($_POST['lawyer_registration']))
 {
-    echo "<pre>";
-	print_r($_POST);
+    
 	
 	$full_name = formateData($_POST['full_name']);
 	$email = formateData($_POST['email']);
